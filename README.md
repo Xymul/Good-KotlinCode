@@ -1,6 +1,8 @@
 # Good-KotlinCode(迫真)
 > 灵感来源于[这个仓库](https://github.com/trekhleb/state-of-the-art-shitcode)，只不过他的语言是javascript(?)，我们这里给kotlin整个活。
 
+### 不应该被忽视的分号
+
 *Good*
 ```kotlin
 val a = 10;
@@ -13,9 +15,11 @@ val a = 10
 
 您应该知道，我们要尽可能利用一切我们可以利用的，既然kotlin支持我们使用`;`，那我们为什么不用呢？
 
+### 更详细的函数调用
+
 *Good*
 ```kotlin
-System.out.println();
+System.`out`.println();
 ```
 
 *Bad*
@@ -24,6 +28,8 @@ println()
 ```
 
 您应该明白的是，任何一个物体都有它完整的名字，而kotlin的这种做法无疑是对一个函数拥有完整名字利益的侵犯，因此，我们赞成您使用`System.out.println()`去在控制台输出。
+
+### 返回值类型独立
 
 *Bad*
 ```kotlin
@@ -44,6 +50,8 @@ fun _filter_(/* parameters */)
 
 哦对了，还有一件事，缩进是个令人痛苦的事情，因此我们提倡您不缩进；您可能会说IDE会自动缩进，我想您应该是一个心地善良的人，这种工作完全可以通过不缩进而不是麻烦IDE来解决。
 
+### 强大的工厂
+
 *Good*
 ```kotlin
 interface Factory<in T> {
@@ -59,6 +67,8 @@ interface Factory<out T> {
 ```
 
 为了以防万一，我们需要将泛型参数定为`in`，因为您永远也不知道什么时候需要将`T`作为参数，至于返回`T`，那就让`@UnsafeVariant`解决去吧。
+
+### 正确地构造一个实例
 
 *Good*
 ```kotlin
@@ -82,6 +92,8 @@ fun main() {
 
 正常地去调用构造函数是傻子都会的操作，因此，我们需要更'高端'一点地去创建一个对象。
 
+### 尝试在kotlin中写出c++的感觉
+
 *Good*
 ```kotlin
 fun main() {
@@ -97,6 +109,8 @@ fun main() {
 ```
 
 用`::`去使用一个类成员将会使你的代码看起来更`cpp`，如果你热爱cpp的话，这么写就对了。
+
+### 不要写和程序相关的注释
 
 **Good**
 ```kotlin
@@ -118,6 +132,8 @@ fun main() {
 ```
 
 并不是每一个人都怀着好的心情去编写代码，因此，您需要先做的是安慰他们，而不是写这些枯燥乏味的东西。
+
+### 选择你的开发环境
 
 *Good*
 ```
