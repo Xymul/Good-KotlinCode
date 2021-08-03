@@ -1,8 +1,6 @@
 # Good-KotlinCode(迫真)
 > 灵感来源于[这个仓库](https://github.com/trekhleb/state-of-the-art-shitcode)，只不过他的语言是javascript(?)，我们这里给kotlin整个活。
 
-*再次强调，这只是一个整活，千 万 别 这 么 写！*
-
 *Good*
 ```kotlin
 val a = 10;
@@ -82,6 +80,41 @@ fun main() {
 }
 ```
 
-我们应该使用反射而不是正常地去调用构造函数，这样会显得我们很有水平。
+正常地去调用构造函数是傻子都会的操作，因此，我们需要更'高端'一点地去创建一个对象。
 
-....等待施工
+*Good*
+```kotlin
+fun main() {
+    (Creator::from)();
+}
+```
+
+*Bad*
+```kotlin
+fun main() {
+    Creator.from()
+}
+```
+
+用`::`去使用一个类成员将会使你的代码看起来更`cpp`，如果你热爱cpp的话，这么写就对了。
+
+**Good**
+```kotlin
+/**
+* Hi, I'm LiHua, A student comes from xxx.
+* ......
+*/
+```
+
+*Bad*
+```kotlin
+/**
+* It's used for parsing user's commands.
+* 
+* @see Parser.Keywords
+* @since kt1.4, jvm11
+* @author LiHua.
+*/
+```
+
+并不是每一个人都怀着好的心情去编写代码，因此，您需要先做的是安慰他们，而不是写这些枯燥乏味的东西。
