@@ -77,7 +77,7 @@ class Page(commitSize: Int) { /* ... */ }
 fun main() {
     val classObj = Class<*>.forName("${OutClassContants.packageName}.Page");
     val ctors = classObj.getDeclareConstructors();
-    ctors[0].newInstance(xxxxxxx | xxxxxx)
+    ctors[0].newInstance(0x20000000 | 0x00400000)
 }
 ```
 
