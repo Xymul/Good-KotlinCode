@@ -92,12 +92,14 @@ fun main() {
 
 正常地去调用构造函数是傻子都会的操作，因此，我们需要更'高端'一点地去创建一个对象。
 
-### 尝试在kotlin中写出c++的感觉
+### 看起来让你的语言更多范式
 
 *Good*
 ```kotlin
-fun main() {
-    (Creator::from)();
+@__stdcall fun main(args: Array<String>) @system {
+    unsafe {
+        (Creator::from)();
+    }
 }
 ```
 
@@ -108,7 +110,7 @@ fun main() {
 }
 ```
 
-用`::`去使用一个类成员将会使你的代码看起来更`cpp`，如果你热爱cpp的话，这么写就对了。
+<s>(我愿称之为缝合怪)</s>
 
 ### 不要写和程序相关的注释
 
